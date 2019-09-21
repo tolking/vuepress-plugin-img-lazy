@@ -1,0 +1,36 @@
+{
+  "name": "vuepress-plugin-img-lazy",
+  "version": "1.0.0",
+  "main": "index.js",
+  "description": "a vuepress plugin to better supporting image lazy loading",
+  "author": "tolking <qw13131wang@gmail.com>",
+  "license": "MIT",
+  "repository": "https://github.com/tolking/vuepress-plugin-img-lazy",
+  "bugs": {
+    "url": "https://github.com/tolking/vuepress-plugin-img-lazy/issues"
+  },
+  "homepage": "https://github.com/tolking/vuepress-plugin-img-lazy",
+  "doc": "https://ououe.com/lib/vuepress-plugin-img-lazy.html",
+  "scripts": {
+    "dev": "vuepress dev docs",
+    "serve": "vuepress dev docs",
+    "build": "vuepress build docs"
+  },
+  "keywords": [
+    "vuepress",
+    "vuepress-plugin",
+    "lazy",
+    "img",
+    "loading",
+    "data-src"
+  ],
+  "dependencies": {
+    "lozad": "^1.9.0",
+    "markdown-it-img-lazy": "^1.0.0",
+    "markdown-it-imsize": "^2.0.1"
+  },
+  "devDependencies": {
+    "vuepress": "^1.1.0",
+    "vuepress-theme-default-prefers-color-scheme": "^1.0.2"
+  }
+}
