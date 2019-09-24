@@ -2,6 +2,10 @@
 
 > a vuepress plugin to better supporting image lazy loading
 
+**This plugin not only works on Markdown files, but also applies to your theme if your theme image is in the required format like `<img data-src="img.jpg" loading="lazy" class="lazy">`**
+
+**The plugin will preferentially use native image [lazy-loading](https://caniuse.com/#feat=loading-lazy-attr), if the browser does not support it, it will be implemented through lozad**
+
 base on [markdown-it-img-lazy](https://github.com/tolking/markdown-it-img-lazy) and [markdown-it-imsize](https://github.com/tatsy/markdown-it-imsize) and [lozad](https://github.com/ApoorvSaxena/lozad.js)
 
 [Live Demo and Documentation](https://tolking.github.io/vuepress-plugin-img-lazy/preview.html)
@@ -26,12 +30,12 @@ module.exports = {
 }
 ```
 
-``` md
+```
 ![img](img.jpg)
-<!-- or -->
+# or
 ![img](img.jpg =500x300) <!-- better -->
 <!-- or -->
-<img loading="lazy" data-src="img.jpg" class="lazy">
+<img data-src="img.jpg" loading="lazy" class="lazy">
 ```
 
 ## Options
@@ -40,7 +44,7 @@ module.exports = {
 - Type: `Boolben`
 - Default: `true`
 
-Use the native image [lazy-loading](https://caniuse.com/#feat=loading-lazy-attr) for the web
+Use the native image lazy-loading for the web
 
 ### selector
 - Type: `string`
