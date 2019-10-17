@@ -4,7 +4,6 @@ module.exports = {
   description: 'a vuepress plugin to better supporting image lazy loading',
   dest: 'dist/',
   evergreen: true,
-  cache: false,
   theme: 'default-prefers-color-scheme',
   locales: {
     '/': {
@@ -15,12 +14,12 @@ module.exports = {
     '/zh/': {
       lang: 'zh-CN',
       title: 'vuepress-plugin-img-lazy',
-      description: '为 vuepress 的默认主题增加 prefers-color-scheme'
+      description: '为 vuepress 的默认主题增加图片懒加载'
     }
   },
   themeConfig: {
     repo: 'tolking/vuepress-plugin-img-lazy',
-    docsDir: 'examples',
+    docsDir: 'docs',
     editLinks: true,
     locales: {
       '/': {
