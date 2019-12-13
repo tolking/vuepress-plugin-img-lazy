@@ -34,7 +34,7 @@ module.exports = {
 <img data-src="img.jpg" loading="lazy" class="lazy">
 ```
 
-## Use in theme
+## Use in theme <Badge text="^1.0.1"/>
 
 - registered as global components
 

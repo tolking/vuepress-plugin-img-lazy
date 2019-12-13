@@ -34,7 +34,7 @@ module.exports = {
 <img data-src="img.jpg" loading="lazy" class="lazy">
 ```
 
-## 在主题中使用
+## 在主题中使用 <Badge text="^1.0.1"/>
 
 - 全局注册
 
