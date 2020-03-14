@@ -10,7 +10,7 @@
     "url": "https://github.com/tolking/vuepress-plugin-img-lazy/issues"
   },
   "homepage": "https://github.com/tolking/vuepress-plugin-img-lazy",
-  "doc": "https://ououe.com/lib/vuepress-plugin-img-lazy.html",
+  "doc": "https://tolking.github.io/vuepress-plugin-img-lazy/",
   "scripts": {
     "dev": "vuepress dev docs",
     "serve": "vuepress dev docs",
