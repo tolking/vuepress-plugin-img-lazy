@@ -27,11 +27,9 @@ module.exports = {
 ```
 
 ``` md
-![img](img.jpg)
+![img](/img.jpg)
 <!-- or -->
-![img](img.jpg =500x300) <!-- 最佳 -->
-<!-- or -->
-<img data-src="img.jpg" loading="lazy" class="lazy">
+![img](/img.jpg =500x300) <!-- 最佳 -->
 ```
 
 ## 在主题中使用 <Badge text="^1.0.1"/>
@@ -61,7 +59,7 @@ export default {
 
 ``` vue
 <template>
-  <img-lazy src="img.jpg" />
+  <img-lazy src="/img.jpg" />
 </template>
 ```
 
@@ -78,3 +76,13 @@ export default {
 - Default: `lazy`
 
 默认的懒加载类名
+
+## 其它说明
+
+1. 已经默认包含 [基础路径](https://vuepress.vuejs.org/zh/guide/assets.html#%E5%9F%BA%E7%A1%80%E8%B7%AF%E5%BE%84)，但不包括 markdown 文件里面的 `<img/>` 标签 <Badge text="^1.0.2"/>
+
+如果需要同时使用 `基础路径` 与 `<img/>` 标签，请参考
+
+``` md
+<img :data-src="$withBase('/img.png')" loading="lazy" class="lazy">
+```

@@ -11,6 +11,7 @@ module.exports = (options, ctx) => {
 
     extendMarkdown: md => {
       md.use(require('markdown-it-img-lazy'), { useLoading, selector })
+      md.use(require('./checkSrc.js'), { base: ctx.base })
       md.use(require('markdown-it-imsize'))
     },
 

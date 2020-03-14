@@ -27,11 +27,9 @@ module.exports = {
 ```
 
 ``` md
-![img](img.jpg)
+![img](/img.jpg)
 <!-- or -->
-![img](img.jpg =500x300) <!-- better -->
-<!-- or -->
-<img data-src="img.jpg" loading="lazy" class="lazy">
+![img](/img.jpg =500x300) <!-- better -->
 ```
 
 ## Use in theme <Badge text="^1.0.1"/>
@@ -61,7 +59,7 @@ export default {
 
 ``` vue
 <template>
-  <img-lazy src="img.jpg" />
+  <img-lazy src="/img.jpg" />
 </template>
 ```
 
@@ -78,3 +76,13 @@ Use the native image lazy-loading for the web
 - Default: `lazy`
 
 Default class name for image
+
+## Other
+
+1. [Base URL](https://vuepress.vuejs.org/guide/assets.html#rBase%20URL) already included by default, But it does not include the `<img/>` label in the markdown file <Badge text="^1.0.2"/>
+
+If you need to use both `Base URL` and `<img/>` labels, refer to
+
+``` md
+<img :data-src="$withBase('/img.png')" loading="lazy" class="lazy">
+```

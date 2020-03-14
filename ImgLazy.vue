@@ -1,7 +1,7 @@
 <template>
   <img
     v-bind="$attrs"
-    :data-src="src"
+    :data-src="dataSrc"
     :loading="config.useLoading ? 'lazy' : null"
     :class="config.selector"
   />
@@ -21,6 +21,13 @@ export default {
   computed: {
     config() {
       return config
+    },
+    dataSrc() {
+      return this.src &&
+        this.src.charAt(0) === '/' &&
+        !this.src.startsWith(this.$site.base)
+        ? this.$site.base + this.src.slice(1)
+        : this.src
     }
   }
 }
