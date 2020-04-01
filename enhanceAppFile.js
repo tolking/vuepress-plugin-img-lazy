@@ -1,4 +1,5 @@
 import config from '@dynamic/imgLazy'
+import './style.styl'
 
 export default ({ Vue }) => {
   Vue.mixin({
@@ -16,11 +17,13 @@ export default ({ Vue }) => {
 
     mounted() {
       if (this.$supLoading) {
-        const lazyEls = document.querySelectorAll('.' + config.selector)
-        lazyEls.forEach(lazyEl => lazyEl.setAttribute("src", lazyEl.getAttribute("data-src")))
+        const lazyEls = document.querySelectorAll('img.' + config.selector)
+        lazyEls.forEach(lazyEl => {
+          !lazyEl.getAttribute("src") && lazyEl.setAttribute("src", lazyEl.getAttribute("data-src"))
+        })
       } else {
         const lozad = require('lozad')
-        this.$imgLazyObserver = lozad('.' + config.selector)
+        this.$imgLazyObserver = lozad('img.' + config.selector)
         this.$imgLazyObserver.observe()
       }
     }
