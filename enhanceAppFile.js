@@ -1,5 +1,4 @@
 import config from '@dynamic/imgLazy'
-import './style.styl'
 
 export default ({ Vue }) => {
   Vue.mixin({

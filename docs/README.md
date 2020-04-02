@@ -63,6 +63,12 @@ export default {
 </template>
 ```
 
+**If you registered as global components, you can use it directly in the `markdown` file**
+
+``` md
+<img-lazy src="/img.jpg" />
+```
+
 ## Options
 
 ### useLoading
@@ -86,3 +92,5 @@ If you need to use both `Base URL` and `<img/>` labels, refer to
 ``` md
 <img :data-src="$withBase('/img.png')" loading="lazy" class="lazy">
 ```
+
+2. In order to better supporting image lazy loading, it is better to specify the size of the image (in some themes, you need to set `display` as `inline block` or `block` separately), so as to ensure that the image can occupy the position it should occupy

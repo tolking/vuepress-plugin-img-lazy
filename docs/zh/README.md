@@ -63,6 +63,12 @@ export default {
 </template>
 ```
 
+**如果你采用全局注册，你可以直接在 `markdown` 文件里使用**
+
+``` md
+<img-lazy src="/img.jpg" />
+```
+
 ## 配置
 
 ### useLoading
@@ -84,5 +90,7 @@ export default {
 如果需要同时使用 `基础路径` 与 `<img/>` 标签，请参考
 
 ``` md
-<img :data-src="$withBase('/img.png')" loading="lazy" class="lazy">
+<img width="500" height="300" :data-src="$withBase('/img.png')" loading="lazy" class="lazy">
 ```
+
+2. 为了更好的实现懒加载，最好能够指定图片的大小（部分主题可能需要单独设置 `display` 为 `inline-block` 或者 `block`），以确保图片能够占据它本应该占据的位置
