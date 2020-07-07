@@ -2,7 +2,7 @@
   <img
     v-bind="$attrs"
     :data-src="dataSrc"
-    :loading="config.useLoading ? 'lazy' : null"
+    :loading="config.useNative ? 'lazy' : null"
     :class="config.selector"
   />
 </template>

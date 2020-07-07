@@ -57,9 +57,6 @@ module.exports = {
     }
   },
   plugins: [
-    [require.resolve('../../index.js'), {
-      useLoading: true,
-      selector: 'lazy'
-    }]
+    [require.resolve('../../index.js')]
   ]
 }
