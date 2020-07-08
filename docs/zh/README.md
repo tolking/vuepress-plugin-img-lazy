@@ -2,9 +2,9 @@
 
 > 一个为了更好的支持图片懒加载的 vuepress 插件
 
-**该插件将优先使用 [原生](https://caniuse.com/#feat=loading-lazy-attr) 的图片懒加载，如果浏览器不支持将通过 lozad 实现**
+**该插件将优先使用 [原生](https://caniuse.com/#feat=loading-lazy-attr) 的图片懒加载，如果浏览器不支持将通过 [IntersectionObserver](https://caniuse.com/#feat=intersectionobserver) 实现**
 
-基于 [markdown-it-img-lazy](https://github.com/tolking/markdown-it-img-lazy)、 [markdown-it-imsize](https://github.com/tatsy/markdown-it-imsize)、 [lozad](https://github.com/ApoorvSaxena/lozad.js)
+基于 [markdown-it-img-lazy](https://github.com/tolking/markdown-it-img-lazy)、 [markdown-it-imsize](https://github.com/tatsy/markdown-it-imsize)
 
 ---
 
@@ -71,17 +71,33 @@ export default {
 
 ## 配置
 
-### useLoading
+### useNative
 - Type: `Boolben`
 - Default: `true`
+- Required: `false`
 
 是否使用基于原生的懒加载
 
 ### selector
 - Type: `string`
 - Default: `lazy`
+- Required: `false`
 
 默认的懒加载类名
+
+### rootMargin
+- Type: `String`
+- Default: `200px`
+- Required: `false`
+
+设置 IntersectionObserver 的 rootMargin 属性
+
+### prefix
+- Type: `string` `Function`
+- Default: `src => src && src.charAt(0) === '/' && !src.startsWith(ctx.base) ? ctx.base + src.slice(1) : src`
+- Required: `false`
+
+为图片的 src 配置前缀
 
 ## 其它说明
 
