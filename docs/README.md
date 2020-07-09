@@ -2,9 +2,9 @@
 
 > a vuepress plugin to better supporting image lazy loading
 
-**The plugin will preferentially use native image [lazy-loading](https://caniuse.com/#feat=loading-lazy-attr), if the browser does not support it, it will be implemented through lozad**
+**The plugin will preferentially use native image [lazy-loading](https://caniuse.com/#feat=loading-lazy-attr), if the browser does not support it, it will be implemented through [IntersectionObserver](https://caniuse.com/#feat=intersectionobserver)**
 
-base on [markdown-it-img-lazy](https://github.com/tolking/markdown-it-img-lazy) and [markdown-it-imsize](https://github.com/tatsy/markdown-it-imsize) and [lozad](https://github.com/ApoorvSaxena/lozad.js)
+base on [markdown-it-img-lazy](https://github.com/tolking/markdown-it-img-lazy) and [markdown-it-imsize](https://github.com/tatsy/markdown-it-imsize)
 
 ---
 
@@ -71,17 +71,33 @@ export default {
 
 ## Options
 
-### useLoading
+### useNative
 - Type: `Boolben`
 - Default: `true`
+- Required: `false`
 
 Use the native image lazy-loading for the web
 
 ### selector
 - Type: `string`
 - Default: `lazy`
+- Required: `false`
 
 Default class name for image
+
+### rootMargin
+- Type: `String`
+- Default: `200px`
+- Required: `false`
+
+rootMargin for IntersectionObserver
+
+### prefix
+- Type: `string` `Function`
+- Default: `src => src && src.charAt(0) === '/' && !src.startsWith(ctx.base) ? ctx.base + src.slice(1) : src`
+- Required: `false`
+
+Config prefix for src in images
 
 ## Other
 
