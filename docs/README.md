@@ -72,7 +72,7 @@ export default {
 ## Options
 
 ### useNative
-- Type: `Boolben`
+- Type: `Boolean`
 - Default: `true`
 - Required: `false`
 
